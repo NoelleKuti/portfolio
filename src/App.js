@@ -1,12 +1,16 @@
 import { Landing } from './pages';
-import { NavBar } from './components';
-
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className='App'>
-      <NavBar/>
-      <Landing/>
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/skills' element='<Skills />' />
+          <Route path='/projects' element='<Projects />' />
+          <Route path='/aboutme' element='<AboutMe />' />
+          <Route path='/connect' element='<Connect />' />
+        </Routes>
     </div>
   );
 }

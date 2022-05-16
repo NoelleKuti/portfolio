@@ -1,26 +1,19 @@
 import styled from 'styled-components'
+import { NavBar } from '../components'
 
 const Landing = () => {
   return (
     <LandingPage>
-        <div className='heroImgWrapper'>
-        </div>
-        
-        <h1></h1>
+        <NavBar />
+       <p>Landing</p>
     </LandingPage>
   )
 }
 
 const LandingPage = styled.main`
-    
-    .heroImgWrapper {
-        width: 100vw;
-        height: 100vh;
-        background-image: url('/Computer1.png');
-        background-size: cover;
-    }
-
-
-
+    background-image: url('/Computer1.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
 `
 export default Landing
