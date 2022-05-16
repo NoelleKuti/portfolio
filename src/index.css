@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.primary {
+  --wildBlueYonder: #779ABB;
+  --cyprus: #050B20;
+  --orient: #245979;
+  --Finn: #6B4369;
+  --eastSide: #B59EBF;
+  --sanMarino: #257AAC;
+  --deepCerise: #CC288D;
+  --galliano: #D1971D;
+}
+
+.secondary {
+  --offBlack: #3a2d35;
+  --light: #fdfafb;
+  --blue: #314593;
+  --rose: #bd98a9;
+  --toffee: #977674;
+  --black: #000000;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+}
+
