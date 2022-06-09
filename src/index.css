@@ -5,14 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
-.primary {
   --wildBlueYonder: #779ABB;
   --cyprus: #050B20;
   --orient: #245979;
@@ -21,7 +15,16 @@ code {
   --sanMarino: #257AAC;
   --deepCerise: #CC288D;
   --galliano: #D1971D;
+
 }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+  
 
 .secondary {
   --offBlack: #3a2d35;
@@ -40,5 +43,11 @@ code {
 .column {
   display: flex;
   flex-direction: row;
+}
+
+.fullPage {
+  margin-top: 4rem;
+  min-height: 100vh;
+  width: 100vw;
 }
 

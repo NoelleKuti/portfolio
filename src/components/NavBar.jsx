@@ -1,85 +1,85 @@
-import styled from 'styled-components'
-import { useState } from 'react'
+import { useState, React } from 'react'
+import { Link }  from 'react-router-dom'
+import  styled  from 'styled-components'
 import Logo from '../assets/images/logo.png'
-import { Link } from 'react-router-dom'
 
 const NavBar = () => {
-    const [expanded, toggleExpanded] = useState(false);
-  
+    const [expanded, setExpanded] = useState(false);
+    
     return (
-        <NavBarWrapper className='primary' isExpanded={expanded}>
-            <div className='nav row'>
-                <div className='mainAxis row'>
-                    <img className='logo' src='/Logo.png' alt='Noelle Kuti Logo'/>
-                    <Link to='/skills' className='nav-item'>
-                        <p className='nav-label'>
-                            Skills
-                        </p>    
-                    </Link>
-                    <Link to='/projects' className='nav-item'>
-                        <p className='nav-label'>
-                            Projects
-                        </p>  
-                    </Link> 
-                    <Link to='/aboutme' className='nav-item'>
-                        <p className='nav-label'>
-                            About Me
-                        </p>    
-                    </Link> 
-                    <Link to='/connect' className='nav-item'>
-                        <p className='nav-label'>
-                            Connect
-                        </p>    
-                    </Link>
-                </div>  
+        <NavWrapper expanded={expanded}>
+            <div className='nav'>
+                <Link to='/' className='homeLink'>
+                    <img src={Logo} className='logo' alt='Noelle Kuti Logo' />
+                </Link> 
+                <Link to='/skills' className='navLink'>
+                    Skills
+                </Link>
+                <Link to='/aboutme' className='navLink'>
+                    About Me
+                </Link>
+                <Link to='/projects' className='navLink'>
+                    Projects
+                </Link>
+                <Link to='/connect' className='navLink'>
+                    Connect
+                </Link>
+                <button className='toggleBtn'>
+                    ☰
+                </button>
             </div>
-        </NavBarWrapper>
+        </NavWrapper>
     )
 }
 
-const NavBarWrapper = styled.nav`
+const NavWrapper = styled.div `
+        background-color: var(--cyprus);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+
     .nav {
-        width: 100vw;
-        height: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
         padding: 1rem;
     }
-
-    .mainAxis {
-        width: 100vw;
-        background-color: var(--cyprus);
-        height: 1rem;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 1rem;
-        padding-right: 2rem;
-    }
-
-    .nav-item {
-        padding: 2rem;
-        color: var(--eastSide);
-        border: 2px solid var(--sanMarino);
-        border-radius: 50%;
-        height: 4rem;
-        width: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        
-        :hover {
-            color: white;
-            border: 2px solid white;
-        }
-    }
     
-    .nav-label {
-        text-align: center;
-        width: 6rem;
-    }
     .logo {
         height: 4rem;
-        width: 4rem;
     }
+
+    .navLink {
+        display: ${props => (props.expanded ? 'initial' : 'none')};
+        color: var(--eastSide);
+        align-self: center;
+        text-align: center;
+        padding: 1.5rem;
+        width: 20%;
+        white-space: no-wrap;
+        :hover {
+            background-color: var(--eastSide);
+            color: var(--cyprus);
+        }
+    }
+
+    .homeLink {
+        display: flex;
+    }
+
+    .toggleBtn {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        color: var(--eastSide);
+        padding: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+
 
 `
 export default NavBar
