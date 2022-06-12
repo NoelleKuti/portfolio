@@ -43,17 +43,18 @@ const NavWrapper = styled.div `
         top: 0px;
         left: 0px;
         right: 0px;
+        z-index: 3000;
 
     .navItems {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-content: center;
-        width: 90%;
+        width: 80%;
     }
     
     .nav {
-        height: 6rem;
+        height: 5rem;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -68,6 +69,7 @@ const NavWrapper = styled.div `
 
     .navLink {
         color: var(--eastSide);
+        background-color: var(--cyprus);
         align-self: center;
         text-align: center;
         padding: 1.5rem;
@@ -101,7 +103,6 @@ const NavWrapper = styled.div `
 
     @media only screen and (max-width: 600px) {
         .toggleBtn {
-            border: 2px solid white;
             display: initial;
         }
 

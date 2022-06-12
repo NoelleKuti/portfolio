@@ -11,7 +11,11 @@ const Landing = () => {
 const LandingPage = styled.div`
     background-image: url('/Computer1.png');
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    filter: blur(2px);
+    
+   
+
 `
 export default Landing
