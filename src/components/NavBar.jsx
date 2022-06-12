@@ -19,16 +19,16 @@ const NavBar = () => {
                 </div>
            
                 <div className='navItems'>
-                    <Link to='/skills' className='navLink'>
+                    <Link to='/skills' className='navLink' onClick={() => setExpanded(false)}>
                         Skills
                     </Link>
-                    <Link to='/aboutme' className='navLink'>
+                    <Link to='/aboutme' className='navLink' onClick={() => setExpanded(false)}>
                         About Me
                     </Link>
-                    <Link to='/projects' className='navLink'>
+                    <Link to='/projects' className='navLink' onClick={() => setExpanded(false)}>
                         Projects
                     </Link>
-                    <Link to='/connect' className='navLink'>
+                    <Link to='/connect' className='navLink' onClick={() => setExpanded(false)}>
                         Connect
                     </Link>
                 </div>
