@@ -20,8 +20,9 @@ const Project = ({link, imgLink, projectTitle, projectText}) => {
     }
   
     return (
-        <ProjectCard className='projectCard' showText={showText} blur={blur} onMouseEnter={() => handleHover('on')} onMouseLeave={() => handleHover('off')}>
-            <a href={link} target='_blank' className='projectLink'>
+        <ProjectCard className='projectCard' showText={showText} blur={blur} >
+            <a href={link} target='_blank' className='projectCard' onMouseEnter={() => handleHover('on')} onMouseLeave={() => handleHover('off')}>
+                <img className='projectImg' src={imgLink} alt='project' />
                 <div className='projectInfo'>
                     <h2 className='projectTitle'> {projectTitle} </h2>
                     <p>Coded Using:</p>
@@ -36,51 +37,64 @@ const Project = ({link, imgLink, projectTitle, projectText}) => {
                             <li key={'F' + index}>{item}</li>)}
                     </ul>
                 </div>
-            
-                <img src={imgLink} alt='Weather App Using React.js' className='projectImg' />
+               
+
             </a>
         </ProjectCard>
     );
 }
 
 const ProjectCard = styled.div`
-    .projectCard {
+     .projectCard {
         position: relative;
-        border: 1px solid white;
-        margin: 1rem 1rem;
-    }
-
-  
-    .projectImg {
+        display: grid;
+        place-items: center;
+        grid-template-areas: "main";
+        height: 300px;
         width: 300px;
-        height: 400px;
-        position: absolute;
-        top:0;
+        overflow: hidden;
+        cursor: pointer;
+     }
+
+     .projectCard > * {
+        grid-area: "main";
+     }
+
+    .projectImg {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
         transition: filter 1s;
         filter: ${props => props.blur ?
     'blur(5px)' : 'blur(0)'};
     }
 
     .projectInfo {
-        padding: 20px;
-        display: block;
+        grid-area: "main";
         border: ${props => props.showText ? '2px solid var(--Finn)' : 'none'};
         color: var(--Finn);
-        width: 260px;
-        height: 360px;
+        transition: opacity 1s;
+        opacity: ${props => props.showText ? 1 : 0};
+        max-height: 100%;
+        overflow-y: scroll;
+        margin: 0px auto;
         position: absolute;
         top: 0;
-        transition: opacity 1s;
-        z-index: 3;
-        opacity: ${props => props.showText ? 1 : 0};
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        p, ul, h2 {
+            padding: 0;
+            padding-left: 2rem;
+        }
+        li {
+            padding-left: 1rem;
+            text-decoration: none;
+        }
     }
 
-    .projectLink {
-        cursor: pointer;
-        width: 300px;
-        height: 400px;
-        z-index: 4;
-    }
+
 
 
 `

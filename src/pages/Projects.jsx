@@ -5,7 +5,17 @@ import Project from '../components/Project';
 const Projects = () => {
   return (
     <ProjectsWrapper className='fullPage'>
-        <div className='container'>
+      <div className='container'>
+        <Project
+          link='https://nk-weather-app.netlify.com'
+          imgLink={weather}
+          projectTitle='Weather API App'
+          projectText={
+            {
+              codedUsing: ['React', 'Styled-Components', 'WeatherAPI.com'],
+              features: ['Fahrenheit / Celsius toggle', '3 Day Forecast / Current Forecast toggle', 'useReducer hook', 'fetch api']
+            }}
+        />
         <Project
           link='https://nk-weather-app.netlify.com'
           imgLink={weather}
@@ -24,16 +34,15 @@ const Projects = () => {
 const ProjectsWrapper = styled.div`
   background-color: var(--eastSide);
   padding-top: 5rem;
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 200%;
+  border: 2px solid blue;
   
-
-  .container {
-    height: 100%;
-    width: 80%;
-    margin: 0px auto;
-    padding-top: 20rem;
-  }
-
-
+}
 
 `
 export default Projects
